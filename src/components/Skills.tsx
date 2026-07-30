@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Wrench, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Wrench, CheckCircle2 } from 'lucide-react';
 
 interface TechItem {
   name: string;
@@ -14,7 +14,7 @@ const techStack: TechItem[] = [
   {
     name: 'Laravel',
     category: 'Backend',
-    description: 'PHP Framework',
+    description: 'PHP Web Framework',
     badgeColor: 'bg-red-500/10 text-red-400 border-red-500/20',
     borderColor: 'hover:border-red-500/50 hover:shadow-red-500/10',
     svg: (
@@ -25,8 +25,8 @@ const techStack: TechItem[] = [
   },
   {
     name: 'Next.js',
-    category: 'Frontend',
-    description: 'React Framework',
+    category: 'Backend',
+    description: 'Full-Stack & SSR Framework',
     badgeColor: 'bg-slate-500/10 text-slate-300 border-slate-500/20',
     borderColor: 'hover:border-slate-300/50 hover:shadow-slate-300/10',
     svg: (
@@ -48,9 +48,21 @@ const techStack: TechItem[] = [
     ),
   },
   {
+    name: 'Vue.js',
+    category: 'Frontend',
+    description: 'Progressive Framework',
+    badgeColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+    borderColor: 'hover:border-emerald-400/50 hover:shadow-emerald-400/10',
+    svg: (
+      <svg className="w-8 h-8 text-emerald-400 fill-current" viewBox="0 0 24 24">
+        <path d="M2 3h3.2L12 15 18.8 3H22L12 21 2 3zm4.5 0h3L12 7.5 14.5 3h3L12 12.5 6.5 3z" />
+      </svg>
+    ),
+  },
+  {
     name: 'TypeScript',
     category: 'Frontend',
-    description: 'Typed JS',
+    description: 'Typed JavaScript',
     badgeColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     borderColor: 'hover:border-blue-500/50 hover:shadow-blue-500/10',
     svg: (
@@ -62,7 +74,7 @@ const techStack: TechItem[] = [
   {
     name: 'Tailwind CSS',
     category: 'Frontend',
-    description: 'Styling',
+    description: 'Utility-First Styling',
     badgeColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
     borderColor: 'hover:border-cyan-400/50 hover:shadow-cyan-400/10',
     svg: (
@@ -72,9 +84,47 @@ const techStack: TechItem[] = [
     ),
   },
   {
+    name: 'shadcn/ui',
+    category: 'Frontend',
+    description: 'Re-usable Components',
+    badgeColor: 'bg-slate-500/10 text-slate-200 border-slate-500/20',
+    borderColor: 'hover:border-slate-300/50 hover:shadow-slate-300/10',
+    svg: (
+      <svg className="w-8 h-8 text-slate-100 fill-none stroke-current stroke-[2.5]" viewBox="0 0 24 24">
+        <path d="M4 4h16v16H4z" />
+        <path d="M4 12h16" />
+        <path d="M12 4v16" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Material UI',
+    category: 'Frontend',
+    description: 'MUI React Components',
+    badgeColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+    borderColor: 'hover:border-blue-400/50 hover:shadow-blue-400/10',
+    svg: (
+      <svg className="w-8 h-8 text-blue-500 fill-current" viewBox="0 0 24 24">
+        <path d="M0 2.472v19.056l6 3.472V5.944l6-3.472v19.056l6 3.472V5.944l6-3.472V.001L18 3.473V.001L12 3.473V.001L0 2.472z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Zod',
+    category: 'Tools',
+    description: 'Schema Validation',
+    badgeColor: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
+    borderColor: 'hover:border-indigo-400/50 hover:shadow-indigo-400/10',
+    svg: (
+      <svg className="w-8 h-8 text-indigo-400 fill-current" viewBox="0 0 24 24">
+        <path d="M3 3h18v4L9.5 17H21v4H3v-4l11.5-10H3V3z" />
+      </svg>
+    ),
+  },
+  {
     name: 'PostgreSQL',
     category: 'Database',
-    description: 'SQL Database',
+    description: 'Relational Database',
     badgeColor: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
     borderColor: 'hover:border-sky-400/50 hover:shadow-sky-400/10',
     svg: (
@@ -86,7 +136,7 @@ const techStack: TechItem[] = [
   {
     name: 'MySQL',
     category: 'Database',
-    description: 'SQL Database',
+    description: 'Relational Database',
     badgeColor: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
     borderColor: 'hover:border-amber-400/50 hover:shadow-amber-400/10',
     svg: (
@@ -98,7 +148,7 @@ const techStack: TechItem[] = [
   {
     name: 'Prisma',
     category: 'Database',
-    description: 'Modern ORM',
+    description: 'Next-Gen ORM',
     badgeColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
     borderColor: 'hover:border-emerald-400/50 hover:shadow-emerald-400/10',
     svg: (
@@ -197,7 +247,7 @@ export const Skills: React.FC = () => {
               key={tech.name}
               className={`glass-card p-5 rounded-2xl border border-slate-800/80 hover:-translate-y-1.5 transition-all duration-300 group flex flex-col items-center text-center justify-between cursor-pointer ${tech.borderColor}`}
             >
-              <div className="p-3 rounded-2xl bg-slate-900/80 border border-slate-800/80 group-hover:scale-110 transition-transform duration-300 mb-3 shadow-inner">
+              <div className="p-3 rounded-2xl bg-slate-900/80 border border-slate-800/80 group-hover:scale-110 transition-transform duration-300 mb-3 shadow-inner flex items-center justify-center">
                 {tech.svg}
               </div>
 

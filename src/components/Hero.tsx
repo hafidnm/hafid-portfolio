@@ -61,16 +61,16 @@ export const Hero: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="px-4 py-3.5 rounded-xl border border-slate-800 text-slate-400 hover:text-slate-200 hover:border-slate-700 hover:border-cyan-500/40 transition-colors text-sm font-medium flex items-center gap-2"
-                title="Download Curriculum Vitae"
+                title="Download Resume"
               >
                 <Download className="w-4 h-4 text-slate-400" />
-                <span>CV</span>
+                <span>Resume</span>
               </a>
             </div>
 
             {/* Social Links */}
             <div className="pt-6 border-t border-slate-800/80 flex items-center justify-center lg:justify-start gap-4 text-slate-400">
-              <span className="text-xs uppercase tracking-wider text-slate-500 font-semibold">Media Sosial:</span>
+              <span className="text-xs uppercase tracking-wider text-slate-500 font-semibold">MediaSosial:</span>
               <a
                 href={personal.social.github}
                 target="_blank"
@@ -88,15 +88,6 @@ export const Hero: React.FC = () => {
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href={personal.social.twitter}
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 rounded-lg hover:text-cyan-400 hover:bg-slate-900 transition-colors"
-                aria-label="Twitter Profile"
-              >
-                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -129,10 +120,10 @@ export const Hero: React.FC = () => {
                     <span className="text-slate-400">name:</span> <span className="text-emerald-300">'{personal.name}'</span>,
                   </p>
                   <p className="pl-4">
-                    <span className="text-slate-400">skills:</span> [<span className="text-amber-300">'React'</span>, <span className="text-amber-300">'TypeScript'</span>, <span className="text-amber-300">'Tailwind'</span>],
+                    <span className="text-slate-400">skills:</span> [ <span className="text-amber-300">'Laravel'</span>, <span className="text-amber-300">'React'</span>, <span className="text-amber-300">'JavaScript'</span>, <span className="text-amber-300">'NextJs'</span>, <span className="text-amber-300">'MySQL'</span>, <span className="text-amber-300">'PostgreSQL'</span>, <span className="text-amber-300">'Prisma ORM'</span>, <span className="text-amber-300">'Tailwind'</span>],
                   </p>
                   <p className="pl-4">
-                    <span className="text-slate-400">focus:</span> <span className="text-emerald-300">'User Experience & Speed'</span>,
+                    <span className="text-slate-400">focus:</span> <span className="text-emerald-300">'User Experience'</span>,
                   </p>
                   <p className="pl-4">
                     <span className="text-slate-400">status:</span> <span className="text-cyan-400">'Building Awesome Apps'</span>

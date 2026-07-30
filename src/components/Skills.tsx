@@ -110,6 +110,18 @@ const techStack: TechItem[] = [
     ),
   },
   {
+    name: 'Recharts',
+    category: 'Frontend',
+    description: 'Data Visualization',
+    badgeColor: 'bg-teal-500/10 text-teal-400 border-teal-500/20',
+    borderColor: 'hover:border-teal-400/50 hover:shadow-teal-400/10',
+    svg: (
+      <svg className="w-8 h-8 text-teal-400 fill-current" viewBox="0 0 24 24">
+        <path d="M3 13h2v8H3zm4-8h2v16H7zm4 4h2v12h-2zm4-6h2v18h-2zm4 10h2v8h-2z" />
+      </svg>
+    ),
+  },
+  {
     name: 'Zod',
     category: 'Tools',
     description: 'Schema Validation',
